@@ -200,7 +200,7 @@ public class StepDef extends BaseClass{
 
 	}
 
-	//////Search customer page ///////////////
+	//////Search customer page by email ///////////////
 
 	@When("Enter customer EMail")
 	public void enter_customer_e_mail() {

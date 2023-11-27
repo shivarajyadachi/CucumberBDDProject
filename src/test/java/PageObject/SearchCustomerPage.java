@@ -70,7 +70,7 @@ WebDriver ldriver;
 				WebElement webElementName = ldriver.findElement(By.xpath("//table[@id='customers-grid']//tbody/tr[" + i  + "]/td[3]"));
 				String actualName = webElementName.getText();
 				
-				if(actualName.equals(name))
+				if(actualName.equalsIgnoreCase(name))
 				{
 					found=true;
 					break;
@@ -112,7 +112,7 @@ WebDriver ldriver;
 			WebElement webElementEmail = ldriver.findElement(By.xpath("//table[@id='customers-grid']//tbody/tr[" + i  + "]/td[2]"));
 			String actualEmailAdd = webElementEmail.getText();
 			
-			if(actualEmailAdd.equals(email))
+			if(actualEmailAdd.equalsIgnoreCase(email))
 			{
 				found=true;
 				break;

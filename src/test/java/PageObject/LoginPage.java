@@ -1,5 +1,8 @@
 package PageObject;
 
+
+
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -10,15 +13,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class LoginPage {
 
 	WebDriver ldriver;
-	WebDriverWait wait = new WebDriverWait(ldriver, Duration.ofSeconds(10));
+	WebDriverWait wait;
 	
 	public LoginPage(WebDriver rdriver)
 	{
 		ldriver=rdriver;
 		PageFactory.initElements(rdriver, this);
+		wait= new WebDriverWait(rdriver, Duration.ofSeconds(10));
 
 	}
 	
@@ -55,5 +60,6 @@ public class LoginPage {
 	{
 		logoutBtn = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Logout")));
 		logoutBtn.click();
+		
 	}
 }
