@@ -2,6 +2,7 @@ PageObject\SearchCustomerPage.class
 Utilities\ReadConfig.class
 PageObject\LoginPage.class
 StepDefenition\BaseClass.class
+StepDefenition\CloseStep.class
 StepDefenition\StepDef.class
 TestRunner\Run.class
 PageObject\AddNewCustomerPage.class
