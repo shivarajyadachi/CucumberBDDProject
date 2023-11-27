@@ -144,7 +144,7 @@
 <configuration>
 <testFailureIgnore>true</testFailureIgnore>
 <includes>
-<include>**/*Run.java</include>
+<include>**/RunTests.java</include>
 </includes>
 </configuration>
 </plugin>
