@@ -12,6 +12,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import PageObject.AddNewCustomerPage;
 import PageObject.LoginPage;
 import PageObject.SearchCustomerPage;
@@ -26,16 +28,20 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 /* child class of Base class*/
 public class StepDef extends BaseClass{
+	
+
 
 	@Before
 	public void setup()
 	{
+		
 		// initilaize readConfig
 		readConfig = new ReadConfig();
 		// initialize logger
 		log = LogManager.getLogger("StepDef");				
 		System.out.println("setup() method executed");
 		String loadBrowser = readConfig.getBrowser();
+		
 		//launch browser
 		switch(loadBrowser.toLowerCase())
 		{
@@ -79,7 +85,7 @@ public class StepDef extends BaseClass{
 		addNewCustpage = new AddNewCustomerPage(driver);
 		searchCustPage = new SearchCustomerPage(driver);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
 	}
 
 	@When("User opens URL {string}")

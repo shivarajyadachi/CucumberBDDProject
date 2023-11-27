@@ -4,7 +4,6 @@ package StepDefenition;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.*;
 import org.openqa.selenium.WebDriver;
-
 import PageObject.AddNewCustomerPage;
 import PageObject.LoginPage;
 import PageObject.SearchCustomerPage;
@@ -20,6 +19,7 @@ public class BaseClass {
 	public SearchCustomerPage searchCustPage;
 	public static Logger log;
 	public ReadConfig readConfig;
+	
 	// Generate unique emailId
 	public String generateEmailId()
 	{

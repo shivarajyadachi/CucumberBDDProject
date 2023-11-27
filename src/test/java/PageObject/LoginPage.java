@@ -1,18 +1,25 @@
 package PageObject;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
 	WebDriver ldriver;
+	WebDriverWait wait = new WebDriverWait(ldriver, Duration.ofSeconds(10));
 	
 	public LoginPage(WebDriver rdriver)
 	{
 		ldriver=rdriver;
 		PageFactory.initElements(rdriver, this);
+
 	}
 	
 	@FindBy(id="Email")
@@ -46,6 +53,7 @@ public class LoginPage {
 	
 	public void clickOnLogoutBtn()
 	{
+		logoutBtn = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Logout")));
 		logoutBtn.click();
 	}
 }
