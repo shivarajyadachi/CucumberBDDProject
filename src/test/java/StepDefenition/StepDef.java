@@ -126,8 +126,8 @@ public class StepDef extends BaseClass{
 	}
 
 	@Then("error message is {string}")
-	public void error_message_is(String string) {
-	  String expectedErrorMsg = "Login was unsuccessful. Please correct the errors and try again.";
+	public void error_message_is(String expectedErrorMsg) {
+	 
 	  Assert.assertEquals(expectedErrorMsg,loginpage.invalidCredentials());
 	}
 
