@@ -15,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import PageObject.AddNewCustomerPage;
+import PageObject.AddProduct;
 import PageObject.LoginPage;
 import PageObject.SearchCustomerPage;
 import Utilities.ReadConfig;
@@ -28,42 +29,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 /* child class of Base class*/
 public class StepDef extends BaseClass{
-	
 
 
 	@Before
 	public void setup()
 	{
 		
-		// initilaize readConfig
-		readConfig = new ReadConfig();
-		// initialize logger
-		log = LogManager.getLogger("StepDef");				
-		System.out.println("setup() method executed");
-		String loadBrowser = readConfig.getBrowser();
-		
-		//launch browser
-		switch(loadBrowser.toLowerCase())
-		{
-		case "chrome":
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			break;
+		launchBrowser();
+	
 
-		case "msedge":
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-			break;
-
-		case "firefox":
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-			break;
-		default:
-			driver = null;
-			break;
-		}
-		log.fatal("Setup1 executed...");
 	}
 
 	/*@Before("@Sanity")
@@ -76,17 +50,16 @@ public class StepDef extends BaseClass{
 		  log.info(" Browser Setup for Sanity Testing is Executed....");
 	}*/
 
-
-	/////////// Login ///////////////
 	@Given("User Launch Chrome browser")
 	public void user_launch_chrome_browser() {
 
 		loginpage = new LoginPage(driver);
 		addNewCustpage = new AddNewCustomerPage(driver);
 		searchCustPage = new SearchCustomerPage(driver);
+		//addProductPage = new AddProduct(driver);
 		driver.manage().window().maximize();
 		
-	}
+	}	
 
 	@When("User opens URL {string}")
 	public void user_opens_url(String url) {
@@ -128,7 +101,7 @@ public class StepDef extends BaseClass{
 	@Then("error message is {string}")
 	public void error_message_is(String expectedErrorMsg) {
 	 String actualErrorMsg = loginpage.invalidCredentials();
-	  if(expectedErrorMsg.equalsIgnoreCase(actualErrorMsg))
+	  if(actualErrorMsg.contains(expectedErrorMsg))
 	  {
 		  Assert.assertTrue(true);
 	  }else
@@ -277,6 +250,9 @@ public class StepDef extends BaseClass{
 		}
 		driver.quit();
 	}*/
+	
+	
+	
 
 	@AfterStep
 	public void addScreenShot(Scenario scenario)

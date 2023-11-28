@@ -14,7 +14,7 @@ public class AddNewCustomerPage {
 	public AddNewCustomerPage(WebDriver rdriver)
 	{
 		ldriver=rdriver;
-		PageFactory.initElements(ldriver, this);
+		PageFactory.initElements(rdriver, this);
 	}
 
 	//Find web elements on the web page

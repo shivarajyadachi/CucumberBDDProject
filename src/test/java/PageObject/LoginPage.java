@@ -57,6 +57,12 @@ public class LoginPage {
 	public void clickOnLogonBtn()
 	{
 		LoginBtn.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void clickOnLogoutBtn()
@@ -67,6 +73,7 @@ public class LoginPage {
 	}
 	public String invalidCredentials()
 	{
-		return errorMessage.getText();
+		String msg= errorMessage.getText();
+		return msg;
 	}
 }
