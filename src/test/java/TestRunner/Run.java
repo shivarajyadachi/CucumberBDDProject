@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = {".//Features/Customers.feature",".//Features/LoginFeature.feature"},
 		//features = ".//Features/",    /* It will execute all feature files
 		glue="StepDefenition",
-		dryRun = true,
+		dryRun = false,
 		monochrome = true,
 		tags="@Sanity or @Regression", // It will execute only @Sanity Test cases
 		//plugin = {"pretty","html:target/Cucumber-reports/reports_html.html"}
