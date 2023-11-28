@@ -125,7 +125,11 @@ public class StepDef extends BaseClass{
 		log.info("Clicked on logout Button....");
 	}
 
-
+	@Then("error message is {string}")
+	public void error_message_is(String string) {
+	  String expectedErrorMsg = "Login was unsuccessful. Please correct the errors and try again.";
+	  Assert.assertEquals(expectedErrorMsg,loginpage.invalidCredentials());
+	}
 
 
 	////////////Add new Customer /////////////

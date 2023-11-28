@@ -39,6 +39,9 @@ public class LoginPage {
 	@FindBy(linkText="Logout")
 	WebElement logoutBtn;
 	
+	@FindBy(xpath="//ul/parent::div")
+	WebElement errorMessage;
+	
 	public void enterEmail(String emailAddress)
 	{
 		email.clear();
@@ -61,5 +64,9 @@ public class LoginPage {
 		logoutBtn = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Logout")));
 		logoutBtn.click();
 		
+	}
+	public String invalidCredentials()
+	{
+		return errorMessage.getText();
 	}
 }

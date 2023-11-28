@@ -26,4 +26,11 @@ Scenario Outline:  Successful Login with Valid Credentials DDT
 	|test@test.com|admin|
 	
 	
-	
+	@Sanity
+Scenario: Unsuccessful Login with invalid Credentials 
+	Given User Launch Chrome browser 
+	When User opens URL "http://admin-demo.nopcommerce.com/login" 
+	And User enters Email as "admin@yourstore.com1" and Password as "admin" 
+	And Click on Login 
+	Then error message is "Login was unsuccessful. Please correct the errors and try again."
+	And close browser 
