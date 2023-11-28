@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 		glue="StepDefenition",
 		dryRun = false,
 		monochrome = true,
-		tags="@Sanity", // It will execute only @Sanity Test cases
+		tags="@Sanity or @Regression", // It will execute only @Sanity Test cases
 		//plugin = {"pretty","html:target/Cucumber-reports/reports_html.html"}
 		plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 		)
