@@ -32,5 +32,5 @@ Scenario: Unsuccessful Login with invalid Credentials
 	When User opens URL "http://admin-demo.nopcommerce.com/login" 
 	And User enters Email as "admin@yourstore.com1" and Password as "admin" 
 	And Click on Login 
-	Then error message is "Login was unsuccessful. Please correct the errors and try again."
+	Then error message is "Login was unsuccessful. Please correct the errors and try again.123"
 	And close browser 
