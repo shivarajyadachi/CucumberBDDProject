@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features = {".//Features/Customers.feature",".//Features/LoginFeature.feature",".//Features/Product.feature"},
+		features = {".//Features/Customers.feature",".//Features/LoginFeature.feature",".//Features/Product.feature",".//Features/Category.feature"},
 		//features = ".//Features/",    /* It will execute all feature files
 		glue="StepDefenition",
 		dryRun = false,

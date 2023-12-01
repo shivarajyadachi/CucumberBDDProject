@@ -10,7 +10,6 @@ Scenario: Add new Product
  	And Click on Add new Product button
 	And Enter Product Name "Gramaxone" 
 	And Enter Product Description
-	And Select the Parent Category
 	And Click on Save button
 	Then user can view confirmation message "The new product has been added successfully"
 	And close browser 

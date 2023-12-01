@@ -3,6 +3,7 @@ package StepDefenition;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.*;
+import org.junit.experimental.categories.Categories;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import PageObject.AddNewCustomerPage;
 import PageObject.AddProduct;
+import PageObject.Category;
 import PageObject.DeleteProduct;
 import PageObject.LoginPage;
 import PageObject.SearchCustomerPage;
@@ -30,6 +32,7 @@ public class BaseClass {
 	public SearchCustomerPage searchCustPage;
 	public AddProduct addProductPage;
 	public DeleteProduct deleteProductPage;
+	public Category categoryPage;
 	public static Logger log;
 	public ReadConfig readConfig;
 	
@@ -41,12 +44,13 @@ public class BaseClass {
 		return RandomStringUtils.randomAlphabetic(5);
 
 	}
+	//it will Select the dropdownlist when the tag is Select class
 	public void selectDropDownList(WebElement ele,String value)
 	{
 		Select sel = new Select(ele);
 		sel.selectByVisibleText(value);
 	}
-	
+	// To Launch the requested browser from ReadConfig file
 	public void launchBrowser()
 	{
 		// initilaize readConfig

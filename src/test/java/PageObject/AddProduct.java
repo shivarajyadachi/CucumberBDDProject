@@ -73,4 +73,10 @@ public class AddProduct {
 		String msg= successProdAddMsg.getAttribute("textContent");
 		return msg;
 	}
+	
+	public WebElement getParentCategoryElement()
+	{
+		WebElement ele = parentCategory;
+		return ele;
+	}
 }

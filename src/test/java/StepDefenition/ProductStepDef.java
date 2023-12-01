@@ -51,13 +51,14 @@ public class ProductStepDef extends BaseClass{
 	}
 
 
-	@When("Select the Parent Category")
-	public void select_the_parent_category() {
-	 
-	}
-
 	@When("Click on Save button")
 	public void click_on_save_button1() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		addProductPage.clickOnSave();
 	}
 
